@@ -1,0 +1,30 @@
+
+
+<div class="row justify-content-center">
+<h1>Create new product</h1>
+
+<div class="row">
+  
+  <%= simple_form_for @product do |f| %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :product_name ,:input_html => { :class => 'form-control shadow rounded', :placeholder => "name" } %>
+
+    <%= f.input :price,:input_html => { :class => 'form-control shadow rounded', :placeholder => "price" } %>
+
+    <%= f.input :description ,:input_html => { :class => 'form-control shadow rounded', :placeholder => "description" } %>
+
+    <%= f.input :color, as: :radio_buttons,
+    collection: ['Red', 'Blue'] %>
+
+    <%= f.input :country, collection: ['Albania', 'Italy','Greece','Germany','USA'], prompt: :translate %>
+
+     <%= f.input :expiration_date %>
+
+    <%= f.submit :submit, class:"btn btn-primary"  %>
+
+  <%end%>
+
+</div>
+</div>

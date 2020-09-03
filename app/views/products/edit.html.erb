@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+<h1>Edit product</h1>
+
+<div class="row">
+  <%= simple_form_for @product do |f| %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :product_name , class:"form-control shadow rounded" %>
+
+    <%= f.input :price , class:"shadow rounded"%>
+
+    <%= f.input :description , class:"shadow rounded" %>
+
+    <%= f.input :color, as: :radio_buttons,
+    collection: ['Red', 'Blue'] %>
+  <%= f.input :country, collection: ['Albania', 'Italy','Greece','Germany','USA'], prompt: :translate %>
+
+   <%= f.input :expiration_date %>
+
+    <%= f.submit :submit ,class:"btn btn-primary"  %>
+
+  <%end%>
+
+</div>
+</div>
